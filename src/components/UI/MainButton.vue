@@ -7,13 +7,12 @@
             'link-secondary': type === 'secondary',
             'link-outline': type === 'outline',
          }">
-        <router-link :to="route"
-                     class="px-4"
-                     :class="{
-                        'fs-1': size === 'small',
-                        'fs-3': size === 'normal',
-                        'fs-5': size === 'big',
-                     }"
+        <p class="px-4"
+                :class="{
+                    'fs-1': size === 'small',
+                    'fs-3': size === 'normal',
+                    'fs-5': size === 'big',
+                 }"
         >
             <slot name="icon">
                 <i class="fas fa-star"></i>
@@ -21,7 +20,7 @@
             <span class="ms-2">
                 <slot>Button Name</slot>
             </span>
-        </router-link>
+        </p>
     </div>
 </template>
 
@@ -30,14 +29,6 @@ export default {
     name: "MainLink",
 
     props: {
-
-        route: {
-            type: String,
-            required: true,
-            validator: value => {
-                return value[0] === '/';
-            }
-        },
 
         type: {
             type: String,
@@ -82,16 +73,20 @@ div {
     border-width: 2px;
     border-style: solid;
 
-    a {
-        text-decoration: none;
+    button {
+        border: 0;
+        background-color: transparent;
+        font-family: inherit;
         display: block;
         width: 100%;
+        height: 100%;
     }
 
     & .link-primary {
         background-color: $primary;
         border-color: $primary;
-        & a {
+
+        & p {
             color: $light !important;
         }
 
@@ -103,8 +98,9 @@ div {
 
     & .link-secondary {
         background-color: $accent-light;
-        border-color: $accent-dark;
-        & a {
+        border-color: $accent-light;
+
+        & p {
             color: $accent-dark !important;
         }
 
@@ -117,7 +113,8 @@ div {
     & .link-outline {
         background-color: transparent;
         border-color: $mid;
-        & a {
+
+        & p {
             color: $mid !important;
         }
 

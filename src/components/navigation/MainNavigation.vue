@@ -1,5 +1,5 @@
 <template>
-    <section id="mainNavigation">
+    <section id="mainNavigation" class="mt-10">
 <!--        <small>#mainNavigation</small>-->
 
         <MainLink route="/game" type="primary" size="normal">

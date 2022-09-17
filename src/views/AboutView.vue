@@ -7,11 +7,11 @@
                     <i class="fas fa-arrow-left"></i>
                 </template>
                 <template v-slot:default>
-                    Retour à l'accueil
+                    Accueil
                 </template>
             </MainLink>
 
-            <h2 class="fs-7 text-center">À propos</h2>
+            <h2 class="fs-5 text-center">À propos</h2>
         </div>
     </div>
 </template>

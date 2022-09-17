@@ -1,5 +1,12 @@
 @import './variables.scss';
 
+
+@font-face {
+    font-family: "StribeMarker";
+    src: url(../fonts/StribeMarker/font.woff),
+    url(../fonts/StribeMarker/font.woff2);
+}
+
 /*****************************************\
 RESET
 \*****************************************/
@@ -11,7 +18,9 @@ RESET
 }
 
 body {
-    font-family: 'Titillium Web', sans-serif;
+    //font-family: 'Titillium Web', sans-serif;
+    font-family: 'StribeMarker', sans-serif;
+    letter-spacing: 5px;
     background-color: $light;
     color: $dark;
 
@@ -28,8 +37,19 @@ h2 {
 
 .container {
     //border: 2px solid #fac;
-    max-width: 400px;
+    max-width: 90%;
     margin: 0 auto;
+
+    @media (min-width: 768px) {
+        max-width: 380px;
+    }
+}
+
+header {
+    @media (min-width: 768px) {
+        max-width: 380px;
+        margin: 0 auto;
+    }
 }
 
 .rounded {
