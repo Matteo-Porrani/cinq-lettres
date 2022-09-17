@@ -1,0 +1,104 @@
+@import './variables.scss';
+
+/*****************************************\
+RESET
+\*****************************************/
+
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Titillium Web', sans-serif;
+    background-color: $light;
+    color: $dark;
+
+
+}
+
+h1 {
+    color: $primary;
+}
+
+h2 {
+    color: $mid;
+}
+
+.container {
+    //border: 2px solid #fac;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.rounded {
+    border-radius: $spacer;
+}
+
+small {
+    display: block;
+    width: fit-content;
+    background: #8b2;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: .675rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-family: monospace;
+}
+
+/*****************************************\
+FONT SIZE
+\*****************************************/
+@for $i from 0 through 8 {
+    .fs-#{$i} {
+        font-size: $font-spacer + (4px * $i);
+    }
+}
+
+.fw-bold {
+    font-weight: 700;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-start {
+    text-align: left;
+}
+
+.text-end {
+    text-align: right;
+}
+
+/*****************************************\
+PADDING & MARGIN
+\*****************************************/
+
+// PADDING
+@each $className, $cssProp in $paddingClasses {
+    @for $i from 1 through 10 {
+        .#{$className}-#{$i} {
+            #{$cssProp}: $i * $spacer;
+        }
+    }
+}
+
+// MARGIN
+@each $className, $cssProp in $marginClasses {
+    @for $i from 1 through 10 {
+        .#{$className}-#{$i} {
+            #{$cssProp}: $i * $spacer;
+        }
+    }
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,44 @@
+/*****************************************\
+COLORS
+\*****************************************/
+
+$dark: #212529;
+$light: #f8f9fa;
+$light-hover: #e2e6e9;
+$mid: #789;
+
+$primary: #78e;
+$secondary: #9de;
+$accent: #fd3;
+
+
+/*****************************************\
+FONT-SIZE
+\*****************************************/
+$font-spacer: 8px;
+
+/*****************************************\
+SPACING
+\*****************************************/
+
+$spacer: 8px;
+
+$paddingClasses: (
+        "p": "padding",
+        "px": "padding-inline",
+        "py": "padding-block",
+        "ps": "padding-left",
+        "pe": "padding-right",
+        "pt": "padding-top",
+        "pb": "padding-bottom",
+);
+
+$marginClasses: (
+        "m": "margin",
+        "mx": "margin-inline",
+        "my": "margin-block",
+        "ms": "margin-left",
+        "me": "margin-right",
+        "mt": "margin-top",
+        "mb": "margin-bottom",
+);

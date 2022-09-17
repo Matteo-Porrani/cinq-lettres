@@ -1,5 +1,5 @@
 <template>
-    <div class="about">
+    <div class="rules">
         <div class="container">
 
             <MainLink route="/" type="outline" size="small">
@@ -11,7 +11,19 @@
                 </template>
             </MainLink>
 
-            <h2 class="fs-7 text-center">À propos</h2>
+            <h2 class="fs-7 text-center">Instructions</h2>
         </div>
     </div>
 </template>
+
+<script>
+import MainLink from "@/components/navigation/MainLink";
+export default {
+    name: "RulesView",
+    components: {MainLink}
+}
+</script>
+
+<style scoped>
+
+</style>
