@@ -77,7 +77,7 @@ small {
 /*****************************************\
 FONT SIZE
 \*****************************************/
-@for $i from 0 through 8 {
+@for $i from 0 through 12 {
     .fs-#{$i} {
         font-size: $font-spacer + (4px * $i);
     }
