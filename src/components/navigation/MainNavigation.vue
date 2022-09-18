@@ -21,12 +21,21 @@
             <template v-slot:default>Instructions</template>
         </MainLink>
 
+        <MainLink route="/list"
+                  type="outline"
+                  size="normal"
+        >
+            <template #icon>
+                <i class="fas fa-sort-alpha-down"></i>
+            </template>
+            <template v-slot:default>liste des mots</template>
+        </MainLink>
+
         <MainLink route="/about"
                   type="outline"
                   size="normal"
         >
             <template #icon>
-                <!--                <i class="fas fa-smile-wink"></i>-->
                 <i class="fas fa-ghost"></i>
             </template>
             <template v-slot:default>À propos</template>
