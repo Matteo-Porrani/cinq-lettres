@@ -11,7 +11,11 @@
                 </template>
             </MainLink>
 
-            <h2 class="fs-5 text-center">Instructions</h2>
+            <h2 class="fs-5 text-center mb-3">Instructions</h2>
+
+            <p class="f-inria text-mid fs-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis culpa ducimus enim error et eum
+                eveniet, ipsa laboriosam, laborum laudantium magnam nemo nostrum, officia placeat quaerat quisquam
+                repellendus totam veritatis.</p>
         </div>
     </div>
 </template>

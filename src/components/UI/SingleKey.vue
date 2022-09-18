@@ -3,14 +3,18 @@
          class="key text-center p-1"
          :class="{
             'key-standard': keyType === 'standard',
+            'key-primary': keyType === 'special' && content === 'OK',
             'key-special': keyType === 'special',
+            'key-danger': keyType === 'special' && content === 'Suppr',
+            'key-disabled': (content === 'OK' && word.length < 5) || (content === 'OK' && word.length === 5 && !wordInList),
+
          }">
     <span class="fs-2">{{ content }}</span>
 </article>
 </template>
 
 <script>
-import {mapActions} from 'pinia';
+import {mapState, mapActions} from 'pinia';
 import {useGameStore} from "@/stores/GameStore.js";
 
 export default {
@@ -24,6 +28,12 @@ export default {
     },
 
     computed: {
+
+        ...mapState(useGameStore, [
+           'word',
+            'wordInList',
+        ]),
+
         keyType() {
             if (['OK', 'Suppr'].includes(this.content)) return 'special';
             return 'standard';
@@ -61,9 +71,10 @@ export default {
 
 .key {
     cursor: pointer;
-    border-width: 1px;
-    border-style: solid;
+    //border-width: 1px;
+    //border-style: solid;
     border-radius: $spacer;
+    flex-grow: 1;
 
     display: flex;
     justify-content: center;
@@ -75,29 +86,50 @@ export default {
     }
 
     &.key-standard {
-        width: 28px;
-        border: 1px solid $mid;
-        color: $mid;
+        background-color: $mid;
+        color: $light;
 
         &:hover {
-            background-color: $light-hover;
+            background-color: $dark;
         }
     }
 
     &.key-special {
-        //width: 32px;
-        border-color: $accent-dark;
         background-color: $accent-light;
         color: $accent-dark;
 
         &:hover {
-            background-color: $mid;
-            color: $accent-light;
-            border-color: $accent-light;
+            background-color: $accent-light-hover;
         }
-
     }
 
+    &.key-primary {
+        background-color: $primary;
+        color: $light;
+
+        &:hover {
+            background-color: $primary-hover;
+        }
+    }
+
+    &.key-danger {
+        background-color: $danger;
+        color: $light;
+
+        &:hover {
+            background-color: $primary-hover;
+        }
+    }
+
+    &.key-disabled {
+        background-color: $light;
+        color: $light-hover;
+
+        &:hover {
+            cursor: default;
+            background-color: $light;
+        }
+    }
 
 }
 </style>

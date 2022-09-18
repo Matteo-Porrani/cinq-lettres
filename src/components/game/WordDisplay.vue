@@ -1,11 +1,14 @@
 <template>
     <section id="wordDisplay">
 
-        <WordDisplayLine v-for="(submission, index) in submissions"
-                         :key="index"
-                         :hints="hints[index]"
-                         :submitted-word="submission"
-                         :current="false"/>
+        <transition-group name="newline">
+            <WordDisplayLine v-for="(submission, index) in submissions"
+                             :key="index"
+                             :hints="hints[index]"
+                             :submitted-word="submission"
+                             :current="false"/>
+
+        </transition-group>
 
         <WordDisplayLine :submitted-word="word"
                          :current="true"/>

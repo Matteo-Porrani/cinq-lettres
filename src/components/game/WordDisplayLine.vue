@@ -1,8 +1,13 @@
 <template>
-    <article class="word-display-line my-1">
+    <article class="word-display-line my-1" :class="{'current': current}">
 
         <div class="word-col fs-4">
-            <h3 :class="{'current': current}">{{ submittedWord }}</h3>
+
+            <h3 :class="{'current': current}">
+                <transition-group name="letter-span">
+                    <LetterSpan v-for="(letter, idx) in splittedWord" :key="idx" :letter="letter"/>
+                </transition-group>
+            </h3>
         </div>
 
         <div v-if="hints" class="output-col fs-3">
@@ -14,10 +19,14 @@
 </template>
 
 <script>
-
+import LetterSpan from "@/components/game/LetterSpan";
 
 export default {
     name: "WordDisplayLine",
+
+    components: {
+        LetterSpan,
+    },
 
     props: {
         submittedWord: {
@@ -32,6 +41,12 @@ export default {
             type: Boolean,
             required: true,
         },
+    },
+
+    computed: {
+        splittedWord() {
+            return this.submittedWord.split('');
+        },
     }
 
 }
@@ -45,10 +60,14 @@ export default {
     display: flex;
     align-items: center;
 
+    &:not(.current) {
+        border-bottom: 3px dotted $mid;
+    }
+
     .word-col {
-        //outline: 2px solid #fac;
+        //outline: 2px solid $accent-light;
         width: 60%;
-        letter-spacing: 6px;
+        text-align: left;
     }
 
     .output-col {
@@ -90,7 +109,42 @@ export default {
 }
 
 @keyframes cursorAnim {
-    0% { opacity: 0 }
-    100% { opacity: 1 }
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
 }
+
+.newline-enter-from {
+    transform: scaleY(.9);
+}
+
+.newline-enter-active {
+    //transition: all .3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation: animNewline .32s ease-out forwards;
+}
+
+.newline-enter-to {
+    transform: scaleY(1);
+}
+
+@keyframes animNewline {
+    0% {
+        transform: scaleY(1);
+        color: $mid;
+    }
+
+    60% {
+        transform: scaleY(1.5);
+        color: $accent-dark !important;
+    }
+
+    100% {
+        transform: scaleY(1);
+        color: $mid;
+    }
+}
+
 </style>

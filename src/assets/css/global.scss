@@ -7,6 +7,12 @@
     url(../fonts/StribeMarker/font.woff2);
 }
 
+.f-inria {
+    font-family: 'Inria Sans', sans-serif !important;
+    letter-spacing: 0px;
+    line-height: 1.5;
+}
+
 /*****************************************\
 RESET
 \*****************************************/
@@ -36,7 +42,7 @@ h2 {
 }
 
 .container {
-    //border: 2px solid #fac;
+    //border: 1px solid #1be;
     max-width: 90%;
     margin: 0 auto;
 
@@ -117,8 +123,21 @@ PADDING & MARGIN
 
 
 
+/*****************************************\
+COLOR UTILITIES
+\*****************************************/
 
+@each $color-key, $color-val in $colors {
 
+    @each $class-name, $css-prop in $util-classes {
+
+        .#{$class-name}-#{$color-key} {
+            #{$css-prop}: #{$color-val} !important;
+        }
+
+    }
+
+}
 
 
 

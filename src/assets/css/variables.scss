@@ -18,6 +18,29 @@ $accent-light: #fc4;
 $accent-dark: #c80;
 
 
+$colors: (
+    "dark": $dark,
+    "light": $light,
+    "mid": $mid,
+    "primary": $primary,
+    "primary-hover": $primary-hover,
+    "secondary": $secondary,
+    "success": $success,
+    "danger": $danger,
+    "accent-light": $accent-light,
+    "accent-light-hover": $accent-light-hover,
+    "accent-dark": $accent-dark
+);
+
+$util-classes: (
+    "bg": "background-color",
+    "text": "color",
+    "border": "border-color"
+);
+
+
+
+
 /*****************************************\
 FONT-SIZE
 \*****************************************/

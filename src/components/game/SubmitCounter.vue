@@ -1,6 +1,9 @@
 <template>
-
+    <p class="f-inria text-mid fs-2">{{ 10 - submissions.length }} tentatives restantes</p>
     <section id="submitCounter" class="my-1 mb-3">
+
+
+
         <!--    <small>#submitCounter</small>-->
 
         <!--    FULL -->
@@ -32,7 +35,7 @@ export default {
     //outline: 2px solid #d04;
 
     display: flex;
-    gap: 10px;
+    gap: 4px;
     justify-content: center;
 
     i.fas {

@@ -1,6 +1,6 @@
 <template>
     <section id="mainNavigation" class="mt-10">
-<!--        <small>#mainNavigation</small>-->
+        <!--        <small>#mainNavigation</small>-->
 
         <MainLink route="/game" type="primary" size="normal">
             <template v-slot:icon>
@@ -26,10 +26,22 @@
                   size="normal"
         >
             <template #icon>
-                <i class="fas fa-smile-wink"></i>
+                <!--                <i class="fas fa-smile-wink"></i>-->
+                <i class="fas fa-ghost"></i>
             </template>
             <template v-slot:default>À propos</template>
         </MainLink>
+
+
+<!--        <button class="fs-5" @click="toggleIcon">Toggle</button>-->
+
+        <!-- Here we use a child component wrapped in <transition> and provide a name -->
+        <!-- in the parent component we set the v-if condition -->
+        <!-- in the child component we set scoped CSS classes for animation -->
+
+        <transition name="icon">
+            <TestAnimation v-if="iconIsVisible"/>
+        </transition>
 
     </section>
 </template>
@@ -38,14 +50,27 @@
 // import MainLink from "@/components/navigation/MainLink.vue";
 
 import MainLink from "@/components/navigation/MainLink";
+import TestAnimation from "@/components/UI/TestAnimation";
+
 export default {
     name: "MainNavigation",
 
     components: {
-        MainLink
-        // MainLink,
+        MainLink,
+        TestAnimation,
     },
 
+    data() {
+        return {
+            iconIsVisible: false,
+        }
+    },
+
+    methods: {
+        toggleIcon() {
+            this.iconIsVisible = !this.iconIsVisible;
+        }
+    },
 
 }
 </script>
@@ -54,4 +79,36 @@ export default {
 #mainNavigation {
     //border: 2px solid #19e;
 }
+
+//#test {
+//    text-align: center;
+//
+//    i {
+//        font-size: 6rem;
+//    }
+//
+//}
+//
+//.icon-enter-from,
+//.icon-leave-to {
+//    opacity: .1;
+//    transform: scale(.2) rotateZ(0);
+//}
+//
+//.icon-enter-active {
+//    //transition: all 1s cubic-bezier(0.83, 0, 0.17, 1);
+//    transition: all 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+//}
+//
+//.icon-leave-active {
+//    //transition: all 1s cubic-bezier(0.83, 0, 0.17, 1);
+//    transition: all 1s cubic-bezier(0.55, 0, 1, 0.45);
+//}
+//
+//.icon-enter-to,
+//.icon-leave-from {
+//    opacity: 1;
+//    transform: scale(1)  rotateZ(3turn);
+//}
+
 </style>

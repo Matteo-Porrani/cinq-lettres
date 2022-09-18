@@ -7,31 +7,39 @@
             <GameLoader v-if="loading"/>
 
 
-            <template v-if="!loading">
+            <MainLink v-if="!loading"
+                      route="/" type="outline" size="small">
+                <template #icon>
+                    <i class="fas fa-arrow-left"></i>
+                </template>
+                <template v-slot:default>Retour</template>
+            </MainLink>
 
-                <MainLink route="/" type="outline" size="small">
-                    <template #icon>
-                        <i class="fas fa-arrow-left"></i>
-                    </template>
-                    <template v-slot:default>Accueil</template>
-                </MainLink>
 
+            <transition name="result">
+                <TheResult v-if="!loading && phase === 'end'"
+                           :result-type="gameResult"/>
+            </transition>
+
+
+
+
+            <template v-if="!loading && phase === 'play'">
 
                 <GameWrapper/>
 
-                <MainButton @click="executeReload" type="secondary">
-                    <template #icon>
-                        <i class="fas fa-sync-alt"></i>
-                    </template>
-                    <template v-slot:default>Nouvelle partie</template>
-                </MainButton>
+                <!--                <MainButton @click="executeReload" type="secondary">-->
+                <!--                    <template #icon>-->
+                <!--                        <i class="fas fa-sync-alt"></i>-->
+                <!--                    </template>-->
+                <!--                    <template v-slot:default>Nouvelle partie</template>-->
+                <!--                </MainButton>-->
 
-
-                <TheKeyboard/>
+                <transition name="keyboard">
+                    <TheKeyboard v-if="keyboardIsVisible"/>
+                </transition>
 
             </template>
-
-
 
 
         </div>
@@ -45,6 +53,7 @@ import {useGameStore} from "@/stores/GameStore.js";
 import GameLoader from "@/components/UI/GameLoader.vue";
 import GameWrapper from "@/components/game/GameWrapper.vue";
 import TheKeyboard from "@/components/UI/TheKeyboard.vue";
+import TheResult from "@/components/UI/TheResult.vue";
 
 
 export default {
@@ -54,17 +63,22 @@ export default {
         GameLoader,
         GameWrapper,
         TheKeyboard,
+        TheResult,
     },
 
     data() {
         return {
             loading: true,
+
+            keyboardIsVisible: false,
         }
     },
 
     computed: {
         ...mapState(useGameStore, [
-           'letters',
+            'phase',
+            'gameResult',
+            'letters',
         ]),
     },
 
@@ -82,15 +96,23 @@ export default {
         },
 
         executeLoader() {
+            this.keyboardIsVisible = false;
             this.loading = true;
             setTimeout(() => {
                 this.loading = false;
+
+                // SHOW KEYBOARD
+                setTimeout(() => {
+                    this.keyboardIsVisible = true;
+                }, 100);
+
             }, 600);
         },
     },
 
     mounted() {
         this.executeLoader();
+        this.reloadGame();
 
         document.addEventListener('keyup', e => {
 

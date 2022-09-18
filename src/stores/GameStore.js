@@ -8,6 +8,9 @@ export const useGameStore = defineStore('game', {
     state: () => {
         return {
 
+            phase: 'play',
+            gameResult: 'loose',
+
             submissions: [],
             hints: [],
 
@@ -26,9 +29,22 @@ export const useGameStore = defineStore('game', {
         }
     },
 
-    getters: {},
+    getters: {
+
+        wordInList() {
+            if (this.word.length < 5) return true;
+            return this.word.length === 5 && this.words.includes(this.word);
+        }
+
+    },
 
     actions: {
+
+        setPhase() {
+            if (this.submissions.length === 3) {
+                this.phase = 'end';
+            }
+        },
 
         addLetter(letter) {
             if (this.word.length < 5) {
@@ -37,6 +53,7 @@ export const useGameStore = defineStore('game', {
         },
 
         addLetterKeyPress(key) {
+            console.log('addLetterKeyPress executed');
             if (this.word.length < 5) {
                 this.word += key.toUpperCase();
             }
@@ -60,13 +77,23 @@ export const useGameStore = defineStore('game', {
 
         submitWord() {
 
-            if (this.word.length > 4) {
+            if (this.word.length > 4 && this.wordInList) {
                 // current word is submitted
                 this.submissions.push(this.word);
                 // current word is resetted
                 this.word = '';
                 // hints are calculated
                 this.updateHints();
+                this.checkWord();
+                this.setPhase();
+            }
+        },
+
+        checkWord() {
+            console.log(this.submissions[this.submissions.length - 1]);
+            if (this.submissions[this.submissions.length - 1] === this.targetWord) {
+                this.phase = 'end';
+                this.gameResult = 'win';
             }
         },
 
@@ -82,6 +109,8 @@ export const useGameStore = defineStore('game', {
         },
 
         reloadGame() {
+            this.phase = 'play';
+            this.result = 'loose';
             this.word = '';
             this.submissions = [];
             this.hints = [];
