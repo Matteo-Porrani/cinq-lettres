@@ -41,7 +41,7 @@ export const useGameStore = defineStore('game', {
     actions: {
 
         setPhase() {
-            if (this.submissions.length === 3) {
+            if (this.submissions.length === 10) {
                 this.phase = 'end';
             }
         },

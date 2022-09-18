@@ -1,6 +1,6 @@
 <template>
 <article @click="pressKey"
-         class="key text-center p-1"
+         class="key text-center py-1"
          :class="{
             'key-standard': keyType === 'standard',
             'key-primary': keyType === 'special' && content === 'OK',
@@ -9,7 +9,7 @@
             'key-disabled': (content === 'OK' && word.length < 5) || (content === 'OK' && word.length === 5 && !wordInList),
 
          }">
-    <span class="fs-2">{{ content }}</span>
+    <span class="fs-5">{{ content }}</span>
 </article>
 </template>
 

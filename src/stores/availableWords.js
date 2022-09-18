@@ -1,15 +1,19 @@
 const availableWords = [
     // A
+    'ADIEU',
     'AMOUR',
     'AUTRE',
     'AVOIR',
+    'AVION',
 
     //B
     'BARGE',
     'BAUME',
+    'BETON',
     'BIDON',
     'BIJOU',
     'BLANC',
+    'BOULE',
 
     //C
     'CABLE',
@@ -19,10 +23,15 @@ const availableWords = [
     'CIGNE',
     'CHIEN',
     'CLOPE',
+    'CLAIR',
     'COEUR',
     'CORPS',
     'COURT',
+    'CRABE',
     'CRANE',
+    'CROIX',
+
+
 
 
     //D
@@ -34,6 +43,7 @@ const availableWords = [
     //E
     'EMAIL',
     'ETANG',
+    'ECRIN',
 
     //F
     'FIBRE',
@@ -55,6 +65,9 @@ const availableWords = [
     //I
     'IDEAL',
     'ICONE',
+    'IMPOT',
+    'INTER',
+
 
     //J
     'JALON',
@@ -64,12 +77,39 @@ const availableWords = [
 
     //K
     'LAINE',
+    'LACHE',
+    'LECON',
+    'LIBRE',
+    'LIGNE',
     'LUNDI',
 
     //M
+    'MAGIE',
+    'MAGOT',
     'MARDI',
+    'MATCH',
+    'MATER',
+    'MATIN',
+    'MELON',
+    'MERCI',
+    'METAL',
+    'METRO',
+    'MINOT',
+    'MOCHE',
+    'MOINS',
+    'MOTIF',
+
+
 
     //N
+    'NAVET',
+    'NOBLE',
+    'NOIRE',
+    'NOTER',
+    'NOTRE',
+    'NOUER',
+    'NUAGE',
+    'NUIRE',
 
     //O
     'ORAGE',
@@ -100,6 +140,7 @@ const availableWords = [
     'VIGNE',
     'VOLET',
     'VIDER',
+    'VOTRE',
 
     //W
     'WAGON',
