@@ -1,7 +1,7 @@
 <template>
     <article class="word-display-line my-1" :class="{'current': current}">
 
-        <div class="word-col fs-4">
+        <div class="word-col fs-3">
 
             <h3 :class="{'current': current}">
                 <transition-group name="letter-span">

@@ -9,7 +9,7 @@
             'key-disabled': (content === 'OK' && word.length < 5) || (content === 'OK' && word.length === 5 && !wordInList),
 
          }">
-    <span class="fs-5">{{ content }}</span>
+    <span class="fs-4">{{ content }}</span>
 </article>
 </template>
 

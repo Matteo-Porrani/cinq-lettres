@@ -22,6 +22,7 @@ const availableWords = [
     'CHANT',
     'CIGNE',
     'CHIEN',
+    'CHOIX',
     'CLOPE',
     'CLAIR',
     'COEUR',
@@ -50,12 +51,15 @@ const availableWords = [
     'FLEUR',
     'FRANC',
     'FRIGO',
+
     'FROID',
     'FONTE',
 
     //G
     'GEANT',
     'GLOBE',
+    'GLAND',
+    'GRAND',
 
     //H
     'HABIT',
@@ -80,6 +84,7 @@ const availableWords = [
     'LACHE',
     'LECON',
     'LIBRE',
+    'LIVRE',
     'LIGNE',
     'LUNDI',
 

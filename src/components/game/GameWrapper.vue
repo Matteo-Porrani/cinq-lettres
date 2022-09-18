@@ -48,8 +48,9 @@ export default {
 
 <style lang="scss" scoped>
 #gameWrapper {
-    //outline: 2px solid #2cc;
-    height: 52vh;
+    outline: 2px solid #2cc;
+    height: 45vh;
+    overflow: scroll;
 
     input {
         font-family: inherit;

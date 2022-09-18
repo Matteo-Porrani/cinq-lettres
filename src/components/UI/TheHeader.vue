@@ -1,11 +1,13 @@
 <template>
-<header class="py-1">
+<header class="">
     <div class="container">
 <!--        <h1><i class="fas fa-sun"></i></h1>-->
-        <h1 class="mb-1"><i class="fas fs-3 fa-dice-d6"></i></h1>
+        <h1 class="py-1">
+            <i class="fas fs-3 fa-dice-d6"></i>
+        </h1>
 <!--        <h1 class="mb-1"><i class="fas fa-dice"></i></h1>-->
 <!--        <h1 v-show="this.$route.fullPath === '/'" class="fs-5">PENTA</h1>-->
-        <h1 class="fs-3">PENTA</h1>
+<!--        <h1 class="fs-3">PENTA</h1>-->
     </div>
 </header>
 </template>
