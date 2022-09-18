@@ -4,8 +4,8 @@
         <!--    <small>#submitCounter</small>-->
 
         <!--    FULL -->
-        <i v-for="n in submissions.length" :key="n" class="fas fa-circle"></i>
-        <i v-for="n in (10 - submissions.length)" :key="n" class="far fa-circle"></i>
+        <i v-for="n in submissions.length" :key="n" class="fas fs-3 fa-circle"></i>
+        <i v-for="n in (10 - submissions.length)" :key="n" class="far fs-3 fa-circle"></i>
 
     </section>
 </template>

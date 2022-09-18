@@ -1,4 +1,4 @@
-import { defineStore } from 'pinia';
+import {defineStore} from 'pinia';
 
 import availableWords from './availableWords.js';
 import hintCalculator from "@/stores/hintCalculator.js";
@@ -26,19 +26,31 @@ export const useGameStore = defineStore('game', {
         }
     },
 
-    getters: {
-
-    },
+    getters: {},
 
     actions: {
 
         addLetter(letter) {
-            if (this.word.length <5) {
+            if (this.word.length < 5) {
                 this.word += letter;
             }
         },
 
+        addLetterKeyPress(key) {
+            if (this.word.length < 5) {
+                this.word += key.toUpperCase();
+            }
+        },
+
         removeLetter() {
+            if (this.word.length > 0) {
+                const currentWordArray = this.word.split('');
+                currentWordArray.pop();
+                this.word = currentWordArray.join('');
+            }
+        },
+
+        removeLetterKeyPress() {
             if (this.word.length > 0) {
                 const currentWordArray = this.word.split('');
                 currentWordArray.pop();
@@ -59,7 +71,7 @@ export const useGameStore = defineStore('game', {
         },
 
         updateHints() {
-            const hints = hintCalculator(this.targetWord, this.submissions[this.submissions.length-1]);
+            const hints = hintCalculator(this.targetWord, this.submissions[this.submissions.length - 1]);
             this.hints.push(hints);
         },
 

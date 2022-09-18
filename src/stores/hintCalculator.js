@@ -1,7 +1,4 @@
 const hintCalculator = (targetWord, currentWord) => {
-    console.log('LOGGING FROM hintCalculator');
-    console.log(targetWord);
-    console.log(currentWord);
 
     const targetWordArray = targetWord.split('');
     const currentWordArray = currentWord.split('');

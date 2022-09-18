@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import {mapActions} from 'pinia';
+import {mapState, mapActions} from 'pinia';
 import {useGameStore} from "@/stores/GameStore.js";
 
 import GameLoader from "@/components/UI/GameLoader.vue";
@@ -62,9 +62,18 @@ export default {
         }
     },
 
+    computed: {
+        ...mapState(useGameStore, [
+           'letters',
+        ]),
+    },
+
     methods: {
         ...mapActions(useGameStore, [
-            'reloadGame'
+            'reloadGame',
+            'addLetterKeyPress',
+            'removeLetterKeyPress',
+            'submitWord',
         ]),
 
         executeReload() {
@@ -82,6 +91,21 @@ export default {
 
     mounted() {
         this.executeLoader();
+
+        document.addEventListener('keyup', e => {
+
+            // if (this.letters.includes(e.key.toUpperCase())) {
+            if (e.key.charCodeAt(0) >= 97 && e.key.charCodeAt(0) <= 122) {
+
+                this.addLetterKeyPress(e.key);
+
+            } else if (e.key === 'Backspace') {
+                this.removeLetterKeyPress();
+            } else if (e.key === 'Enter') {
+                this.submitWord();
+            }
+
+        })
     }
 }
 </script>
