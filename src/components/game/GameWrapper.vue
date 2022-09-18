@@ -1,5 +1,5 @@
 <template>
-    <section id="gameWrapper" class="text-center px-2 my-2">
+    <section id="gameWrapper" class="text-center px-2 my-1">
 <!--        <small>#gameWrapper</small>-->
 
         <SubmitCounter/>

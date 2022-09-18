@@ -13,7 +13,7 @@
         </div>
 
 
-        <div class="keyboard-zone px-1 pt-1 pb-3">
+        <div class="keyboard-zone px-1 pb-1">
             <div v-for="(row, index) in keyboardRows"
                  :key="index"
                  class="keyboard-row mb-1"
