@@ -1,9 +1,6 @@
 <template>
-    <p class="f-inria text-mid fs-2">{{ 10 - submissions.length }} tentatives restantes</p>
+<!--    <p class="f-inria text-mid fs-2">{{ 10 - submissions.length }} tentatives restantes</p>-->
     <section id="submitCounter" class="my-1 mb-3">
-
-
-
         <!--    <small>#submitCounter</small>-->
 
         <!--    FULL -->

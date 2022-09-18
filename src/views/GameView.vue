@@ -1,11 +1,8 @@
 <template>
     <div class="game">
         <div class="container">
-            <!--            <h2 class="fs-7 text-center">Game Page</h2>-->
-
 
             <GameLoader v-if="loading"/>
-
 
             <MainLink v-if="!loading"
                       route="/" type="outline" size="small">
@@ -15,14 +12,10 @@
                 <template v-slot:default>Retour</template>
             </MainLink>
 
-
             <transition name="result">
                 <TheResult v-if="!loading && phase === 'end'"
                            :result-type="gameResult"/>
             </transition>
-
-
-
 
             <template v-if="!loading && phase === 'play'">
 

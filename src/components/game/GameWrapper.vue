@@ -48,7 +48,7 @@ export default {
 
 <style lang="scss" scoped>
 #gameWrapper {
-    outline: 2px solid #2cc;
+    //outline: 2px solid #2cc;
     height: 45vh;
     overflow: scroll;
 
