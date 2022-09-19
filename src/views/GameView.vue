@@ -12,10 +12,18 @@
                 <template v-slot:default>Retour</template>
             </MainLink>
 
+
+            <div v-if="phase === 'end'" class="mt-6">
+                <p class="text-center text-mid fs-4 f-inria mb-3">Le mot secret était</p>
+                <p class="text-center fs-6">{{ targetWord }}</p>
+            </div>
+
+
             <transition name="result">
                 <TheResult v-if="!loading && phase === 'end'"
                            :result-type="gameResult"/>
             </transition>
+
 
             <template v-if="!loading && phase === 'play'">
 
@@ -69,6 +77,7 @@ export default {
 
     computed: {
         ...mapState(useGameStore, [
+            'targetWord',
             'phase',
             'gameResult',
             'letters',

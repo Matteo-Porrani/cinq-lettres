@@ -7,7 +7,7 @@
             'text-danger': resultType === 'loose',
         }"
         ></i>
-        <p class="text-center fs-5 p-3">
+        <p class="text-center fs-8 p-3">
             <span v-html="resultMessage"></span>
         </p>
     </div>
@@ -30,8 +30,8 @@ export default {
     computed: {
 
         resultMessage() {
-            if (this.resultType === 'win') return 'Vous avez<br>gagné<br>!!!';
-            return 'Vous avez<br>perdu<br>!!!';
+            if (this.resultType === 'win') return 'Gagné !';
+            return 'Perdu !';
         }
 
     },
@@ -40,7 +40,7 @@ export default {
 
 <style lang="scss" scoped>
 #result {
-    margin-top: 20vh;
+    margin-top: 12vh;
     //background-color: yellow;
     height: 35vh;
     width: 100%;
@@ -61,7 +61,7 @@ export default {
         //background-color: green;
         position: absolute;
         left: 0;
-        top: 25%;
+        top: 35%;
         width: 100%;
         line-height: 1.5;
 
@@ -88,7 +88,7 @@ export default {
 .result-enter-to,
 .result-leave-from {
     opacity: 1;
-    transform: scale(1) rotateZ(3turn);
+    transform: scale(1) rotateZ(2turn);
 }
 
 </style>

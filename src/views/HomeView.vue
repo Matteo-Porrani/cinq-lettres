@@ -13,11 +13,7 @@
 
             <MainNavigation/>
 
-
-
         </div>
-
-
 
     </div>
 </template>

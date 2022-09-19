@@ -1,6 +1,7 @@
 const availableWords = [
     // A
     'ADIEU',
+    'AIGRE',
     'AMOUR',
     'ANCRE',
     'ARIDE',
@@ -22,6 +23,7 @@ const availableWords = [
     'BARON',
     'BATON',
     'BETON',
+    'BICHE',
     'BIDON',
     'BIJOU',
     'BILAN',
@@ -33,10 +35,13 @@ const availableWords = [
     'BOVIN',
     'BRUIT',
     'BRUME',
+    'BRUTE',
     'BRULE',
 
     //C
     'CABLE',
+    'CADOR',
+    'CADRE',
     'CAPOT',
     'CARTE',
     'CHANT',
@@ -45,6 +50,7 @@ const availableWords = [
     'CHAIR',
     'CHATS',
     'CHIEN',
+    'CHIER',
     'CHOIX',
     'CLONE',
     'CLOPE',
@@ -53,9 +59,12 @@ const availableWords = [
     'CORPS',
     'COUDE',
     'COUTS',
+    'COURS',
     'COURT',
     'CRABE',
     'CRANE',
+    'CRANS',
+    'CRISE',
     'CROIX',
 
     //D
@@ -66,12 +75,15 @@ const availableWords = [
     'DIGNE',
     'DIGUE',
     'DIVAN',
+    'DOIGT',
     'DOUCE',
     'DOUZE',
     'DROIT',
     'DRONE',
+    'DUVET',
 
     //E
+    'ECLAT',
     'ECRAN',
     'ECRIN',
     'EGAUX',
@@ -92,7 +104,9 @@ const availableWords = [
     'FUSIL',
 
     //G
+    'GANTS',
     'GEANT',
+    'GIVRE',
     'GLOBE',
     'GLAND',
     'GARCE',
@@ -107,16 +121,19 @@ const availableWords = [
     //H
     'HABIT',
     'HAINE',
+    'HIBOU',
     'HIVER',
     'HONTE',
     'HOTEL',
     'HOULE',
+    'HUILE',
 
     //I
     'IDEAL',
     'ICONE',
     'IMPOT',
     'INTER',
+    'IVRES',
 
     //J
     'JALON',
@@ -128,11 +145,15 @@ const availableWords = [
     'LAINE',
     'LACHE',
     'LANDE',
+    'LAPIN',
     'LECON',
     'LIBRE',
     'LINGE',
     'LIVRE',
+    'LISTE',
     'LIGNE',
+    'LOUPE',
+    'LOUPS',
     'LUNDI',
 
     //M
@@ -156,11 +177,15 @@ const availableWords = [
     'MOINE',
     'MOINS',
     'MONDE',
+    'MORNE',
     'MOTIF',
     'MOYEN',
+    'MOULE',
+    'MUTER',
 
     //N
     'NAVET',
+    'NICHE',
     'NOBLE',
     'NOIRE',
     'NOTER',
@@ -168,15 +193,23 @@ const availableWords = [
     'NOUER',
     'NUAGE',
     'NUIRE',
+    'NUITS',
 
     //O
     'OCEAN',
+    'OGRES',
     'ORAGE',
     'OTAGE',
 
     //P
     'PATES',
+    'PARCS',
+    'PEURS',
     'PIQUE',
+    'PISTE',
+    'PIVOT',
+    'PLAIT',
+    'PLATS',
     'PLOUC',
     'PLUIE',
     'PLUME',
@@ -185,7 +218,10 @@ const availableWords = [
     'PONTS',
     'PORTE',
     'POTIN',
+    'POUCE',
     'POULE',
+    'POULS',
+    'PRISE',
     'PROUE',
     'PRUDE',
     'PRUNE',
@@ -195,16 +231,25 @@ const availableWords = [
     'QUART',
 
     //R
+    'RAIDE',
     'RAGOT',
     'RAVIN',
+    'RAYON',
     'REFUS',
+    'RICHE',
+    'RUCHE',
     'REGAL',
     'ROCHE',
+    'ROMAN',
+    'ROUES',
     'ROUGE',
+    'ROUTE',
     'RUBAN',
 
     //S
+    'SACRE',
     'SAINT',
+    'SALON',
     'SALVE',
     'SANTE',
     'SIGNE',
@@ -220,12 +265,16 @@ const availableWords = [
     'TABOU',
     'TANGO',
     'TEMPS',
+    'TERNI',
+    'TIERS',
     'TYRAN',
     'TOILE',
     'TOQUE',
     'TRACE',
     'TRAIN',
     'TRONC',
+    'TRUIE',
+    'TUILE',
 
     //U
     'UTILE',
@@ -239,7 +288,9 @@ const availableWords = [
     'VIGNE',
     'VOLET',
     'VIDER',
+    'VIDES',
     'VOTRE',
+    'VOUER',
 
     //W
     'WAGON',
