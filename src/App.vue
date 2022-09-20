@@ -20,16 +20,18 @@ export default {
 .route-enter-from,
 .route-leave-to {
     opacity: 0;
+    transform: translateY(20px);
 }
 
 .route-enter-to,
 .route-leave-from {
     opacity: 1;
+    transform: translateY(0px);
 }
 
 .route-enter-active,
 .route-leave-active {
-    transition: all .4s ease-out;
+    transition: all .3s ease-out;
 }
 
 </style>

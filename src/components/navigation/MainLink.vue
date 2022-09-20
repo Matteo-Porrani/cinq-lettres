@@ -6,6 +6,7 @@
             'link-primary': type === 'primary',
             'link-secondary': type === 'secondary',
             'link-outline': type === 'outline',
+            'link-outline-light': type === 'outline-light',
          }">
         <router-link :to="route"
                      class="px-4"
@@ -19,7 +20,7 @@
                 <i class="fas fa-star"></i>
             </slot>
             <span class="ms-2">
-                <slot>Button Name</slot>
+                <slot></slot>
             </span>
         </router-link>
     </div>
@@ -48,6 +49,7 @@ export default {
                     'secondary',
                     'dark',
                     'outline',
+                    'outline-light',
                 ].includes(value);
             },
         },
@@ -123,6 +125,18 @@ div {
 
         &:hover {
             background-color: $light-hover;
+        }
+    }
+
+    & .link-outline-light {
+        background-color: transparent;
+        border-color: $light;
+        & a {
+            color: $light !important;
+        }
+
+        &:hover {
+            background-color: $primary-hover;
         }
     }
 

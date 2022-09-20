@@ -1,6 +1,6 @@
 <template>
     <div id="keyboardAlert"
-         class="text-center rounded py-1 mb-1"
+         class="text-center rounded py-1"
          :class="{'alert-danger': alertType === 'danger'}">
 
         <p class="f-inria fs-2">

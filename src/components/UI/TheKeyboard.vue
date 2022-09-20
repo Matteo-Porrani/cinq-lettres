@@ -13,7 +13,7 @@
         </div>
 
 
-        <div class="keyboard-zone px-1 pb-1">
+        <div class="keyboard-zone p-1 pb-1">
             <div v-for="(row, index) in keyboardRows"
                  :key="index"
                  class="keyboard-row mb-1"
@@ -63,7 +63,7 @@ export default {
             if (!isInList) {
                 this.alertType = 'danger';
                 this.alertIcon = '<i class="fas fa-exclamation-triangle"></i>';
-                this.alertMess = "Ce mot n'est pas valide !";
+                this.alertMess = "Ce mot n'est pas valide";
                 this.alertIsVisible = true;
             } else {
                 this.resetAlert();
@@ -114,7 +114,6 @@ export default {
         }
     }
 
-
     .keyboard-row {
         //outline: 2px solid #906;
         display: flex;
@@ -123,6 +122,7 @@ export default {
     }
 }
 
+// ENTER
 .keyboard-enter-from {
     transform: translateY(100%);
 }
@@ -133,6 +133,19 @@ export default {
 
 .keyboard-enter-to {
     transform: translateY(0);
+}
+
+// LEAVE
+.keyboard-leave-from {
+    opacity: 1;
+}
+
+.keyboard-leave-to {
+    opacity: 0;
+}
+
+.keyboard-leave-active {
+    transition: all .1s linear;
 }
 
 </style>

@@ -4,13 +4,13 @@
 
             <GameLoader v-if="loading"/>
 
-            <MainLink v-if="!loading"
-                      route="/" type="outline" size="small">
-                <template #icon>
-                    <i class="fas fa-arrow-left"></i>
-                </template>
-                <template v-slot:default>Retour</template>
-            </MainLink>
+<!--            <MainLink v-if="!loading"-->
+<!--                      route="/" type="outline" size="small">-->
+<!--                <template #icon>-->
+<!--                    <i class="fas fa-arrow-left"></i>-->
+<!--                </template>-->
+<!--                <template v-slot:default>Retour</template>-->
+<!--            </MainLink>-->
 
 
             <div v-if="phase === 'end'" class="mt-6">

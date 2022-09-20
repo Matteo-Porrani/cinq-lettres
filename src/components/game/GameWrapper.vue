@@ -49,7 +49,7 @@ export default {
 <style lang="scss" scoped>
 #gameWrapper {
     //outline: 2px solid #2cc;
-    height: 45vh;
+    height: 60vh;
     overflow: scroll;
 
     input {

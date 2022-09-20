@@ -1,11 +1,16 @@
 <template>
     <div id="wordListing" class="my-5">
-        <div class="list-col text-center">
-            <p class="f-inria" v-for="(word, idx) in getColAContent" :key="idx">{{ word }}</p>
-        </div>
-        <div class="list-col text-center">
-            <p class="f-inria" v-for="(word, idx) in getColBContent" :key="idx">{{ word }}</p>
-        </div>
+        <!--        <div class="list-col text-center">-->
+        <!--            <p class="f-inria" v-for="(word, idx) in getColAContent" :key="idx">{{ word }}</p>-->
+        <!--        </div>-->
+        <!--        <div class="list-col text-center">-->
+        <!--            <p class="f-inria" v-for="(word, idx) in getColBContent" :key="idx">{{ word }}</p>-->
+        <!--        </div>-->
+
+
+        <span class="av-word f-inria text-center text-mid rounded px-2"
+              v-for="(w, idx) in words"
+              :key="idx">{{ w }}</span>
     </div>
 </template>
 
@@ -21,7 +26,6 @@ export default {
             halfList: 0,
         }
     },
-
 
     computed: {
         ...mapState(useGameStore, [
@@ -48,14 +52,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    #wordListing {
-        //border: 2px solid #1be;
+@import '../../assets/css/variables.scss';
 
-        display: flex;
+#wordListing {
+    //border: 2px solid #1be;
 
-        .list-col {
-            width: 50%;
-            //border: 2px solid #8b2;
-        }
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+
+    justify-content: space-between;
+
+    span {
+        border: 1px solid $mid;
+        width: 30%;
     }
+
+    //.list-col {
+    //    width: 50%;
+    //    border: 2px solid #8b2;
+    //}
+}
 </style>
