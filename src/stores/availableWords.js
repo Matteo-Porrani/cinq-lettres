@@ -226,6 +226,7 @@ const availableWords = [
     'LISTE',
     'LIVRE',
     'LUNDI',
+    'LUBIE',
     'LOUPE',
     'LOUPS',
 
@@ -295,6 +296,7 @@ const availableWords = [
     'PARIS',
     'PAROI',
     'PARTI',
+    'PARTS',
     'PATES',
     'PAVES',
     'PEAGE',
