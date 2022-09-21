@@ -149,6 +149,7 @@ const availableWords = [
     'FACON',
     'FARCI',
     'FIBRE',
+    'FINAL',
     'FLANC',
     'FLEUR',
     'FLOUS',
