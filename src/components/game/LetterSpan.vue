@@ -1,5 +1,9 @@
 <template>
-    <span>{{ letter }}</span>
+    <span @click="toggleSpanState"
+          :class="{
+            'colored': spanIsColored,
+            'striked': spanIsStriked,
+          }">{{ letter }}</span>
 </template>
 
 <script>
@@ -11,17 +15,72 @@ export default {
             type: String,
             required: true,
         }
+    },
+
+    data() {
+        return {
+            spanIsDefault: true,
+            spanIsColored: false,
+            spanIsStriked: false,
+        }
+    },
+
+    methods: {
+        toggleSpanState() {
+            if (this.spanIsDefault) {
+                this.spanIsDefault = false;
+                this.spanIsColored = true;
+                this.spanIsStriked = false;
+            } else if (this.spanIsColored) {
+                this.spanIsDefault = false;
+                this.spanIsColored = false;
+                this.spanIsStriked = true;
+            } else if (this.spanIsStriked) {
+                this.spanIsDefault = true;
+                this.spanIsColored = false;
+                this.spanIsStriked = false;
+            }
+
+
+
+
+        },
+
+
     }
 }
 </script>
 
 <style lang="scss" scoped>
+@import '../../assets/css/variables.scss';
 span {
     //outline: 1px solid #d04;
 
     display: inline-block;
     text-align: center;
     width: 24px;
+
+    &.colored {
+        color: $primary;
+    }
+
+    &.striked {
+        color: $light-hover;
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            border-radius: 2px;
+            left: 35%;
+            top: 0;
+            display: block;
+            width: 4px;
+            height: 100%;
+            transform: rotate(.1turn);
+            background-color: $danger;
+        }
+    }
 }
 
 

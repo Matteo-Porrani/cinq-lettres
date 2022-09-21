@@ -50,7 +50,7 @@ export default {
 #gameWrapper {
     //outline: 2px solid #2cc;
     height: 60vh;
-    overflow: scroll;
+    //overflow: scroll;
 
     input {
         font-family: inherit;

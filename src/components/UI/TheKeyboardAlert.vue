@@ -40,10 +40,17 @@ export default {
     //outline: 2px solid #2cc;
     //background-color: $secondary;
 
+    @media (min-width: 768px) {
+        max-width: 410px;
+        margin: 0 auto;
+    }
+
     &.alert-danger {
         background-color: $danger;
         color: $light;
     }
+
+
 }
 
 

@@ -41,7 +41,7 @@ export default {
 
     data() {
         return {
-            alertIsVisible: false,
+            alertIsVisible: true,
 
             alertType: '',
             alertIcon: '',
@@ -110,7 +110,7 @@ export default {
         margin: 0 auto;
 
         @media (min-width: 768px) {
-            max-width: 380px;
+            max-width: 410px;
         }
     }
 
