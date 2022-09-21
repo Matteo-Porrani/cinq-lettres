@@ -61,7 +61,7 @@ span {
     width: 24px;
 
     &.colored {
-        color: $primary;
+        color: $accent-dark;
     }
 
     &.striked {

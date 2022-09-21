@@ -62,10 +62,21 @@ export default {
     gap: 5px;
 
     justify-content: space-between;
+    align-items: start;
 
     span {
         border: 1px solid $mid;
         width: 30%;
+
+        &:nth-child(3n + 2) {
+            margin-top: 10px;
+            //background-color: yellow;
+        }
+
+        &:nth-child(3n) {
+            margin-top: 20px;
+            //background-color: cyan;
+        }
     }
 
     //.list-col {

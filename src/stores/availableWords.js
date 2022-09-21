@@ -2,6 +2,7 @@ const availableWords = [
     // A
     'ABRIS',
     'ADIEU',
+    'AGILE',
     'AIGLE',
     'AIGRE',
     'AMOUR',
@@ -54,6 +55,7 @@ const availableWords = [
     'BOURG',
     'BOUTS',
     'BOVIN',
+    'BREFS',
     'BRIDE',
     'BRINS',
     'BRISE',
@@ -92,7 +94,9 @@ const availableWords = [
     'CLOPE',
     'CLOUS',
     'COEUR',
+    'COHUE',
     'COLIS',
+    'CONTE',
     'CORDE',
     'CORNE',
     'CORNU',
@@ -108,6 +112,7 @@ const availableWords = [
     'CRISE',
     'CROIX',
     'CRUEL',
+    'CUITE',
     'CUITS',
 
     //D
@@ -124,6 +129,7 @@ const availableWords = [
     'DIEUX',
     'DIGNE',
     'DIGUE',
+    'DINER',
     'DIVAN',
     'DOIGT',
     'DOUCE',
@@ -320,6 +326,7 @@ const availableWords = [
 
     //P
     'PACTE',
+    'PAGES',
     'PAINS',
     'PAIRE',
     'PANEL',
@@ -375,6 +382,7 @@ const availableWords = [
     'RAIDE',
     'RAGOT',
     'RAMES',
+    'RAVIE',
     'RAVIN',
     'RAYON',
     'RECIT',
@@ -387,6 +395,7 @@ const availableWords = [
     'ROBES',
     'ROCHE',
     'ROMAN',
+    'RONDE',
     'RONDS',
     'ROUES',
     'ROUGE',
