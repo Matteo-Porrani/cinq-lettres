@@ -116,6 +116,7 @@ const availableWords = [
     'CUITS',
 
     //D
+    'DAMES',
     'DANSE',
     'DEBAT',
     'DEBIT',
@@ -280,6 +281,7 @@ const availableWords = [
     'MIENS',
     'MIEUX',
     'MINCE',
+    'MINES',
     'MINOU',
     'MINER',
     'MOCHE',
@@ -354,6 +356,7 @@ const availableWords = [
     'PLATS',
     'PLEIN',
     'PLOUC',
+    'PLOMB',
     'PLUIE',
     'PLUME',
     'POCHE',
