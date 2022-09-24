@@ -81,6 +81,10 @@ export default {
     align-items: center;
 
     span {
+        user-select: none; /* supported by Chrome and Opera */
+        -webkit-user-select: none; /* Safari */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
         display: inline-block;
         transform: translate(2px, 2px);
     }

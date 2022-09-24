@@ -26,6 +26,12 @@ export const useGameStore = defineStore('game', {
                 ['OK', 'W', 'X', 'C', 'V', 'B', 'N', 'Suppr'],
             ],
 
+            defaultLetters: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
+
+            coloredLetters: [],
+
+            strikenLetters: [],
+
         }
     },
 
@@ -115,6 +121,27 @@ export const useGameStore = defineStore('game', {
             this.submissions = [];
             this.hints = [];
             this.getRandomWord();
+        },
+
+
+        toggleLetterState(letter) {
+
+            if (this.defaultLetters.includes(letter)) {
+                console.log(letter);
+                console.log(this.defaultLetters.includes(letter));
+                // 1st click
+                this.defaultLetters.splice(this.defaultLetters.findIndex(item => item === letter), 1);
+                this.coloredLetters.push(letter);
+            } else if (this.coloredLetters.includes(letter)) {
+                // 2nd click
+                this.coloredLetters.splice(this.defaultLetters.findIndex(item => item === letter), 1);
+                this.strikenLetters.push(letter);
+            } else if (this.strikenLetters.includes(letter)) {
+                // 3rd click
+                this.strikenLetters.splice(this.defaultLetters.findIndex(item => item === letter), 1);
+                this.defaultLetters.push(letter);
+            }
+
         },
     },
 

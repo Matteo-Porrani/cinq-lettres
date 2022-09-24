@@ -5,7 +5,10 @@
 
             <h3 :class="{'current': current}">
                 <transition-group name="letter-span">
-                    <LetterSpan v-for="(letter, idx) in splittedWord" :key="idx" :letter="letter"/>
+                    <LetterSpan v-for="(letter, idx) in splittedWord"
+                                :key="idx"
+                                :current="current"
+                                :letter="letter"/>
                 </transition-group>
             </h3>
         </div>
@@ -61,7 +64,7 @@ export default {
     align-items: center;
 
     &:not(.current) {
-        border-bottom: 3px dotted $mid;
+        border-bottom: 2px dotted $soft;
     }
 
     .word-col {
@@ -87,7 +90,7 @@ export default {
     h3 {
         position: relative;
         width: fit-content;
-        color: $mid;
+        //color: $mid;
 
         &.current {
             color: $dark;
@@ -133,17 +136,14 @@ export default {
 @keyframes animNewline {
     0% {
         transform: scaleY(1);
-        color: $mid;
     }
 
     60% {
         transform: scaleY(1.5);
-        color: $accent-dark !important;
     }
 
     100% {
         transform: scaleY(1);
-        color: $mid;
     }
 }
 

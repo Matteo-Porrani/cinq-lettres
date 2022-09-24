@@ -1,12 +1,17 @@
 <template>
     <span @click="toggleSpanState"
           :class="{
+            'current': current,
+            'default': spanIsDefault,
             'colored': spanIsColored,
-            'striked': spanIsStriked,
+            'striken': spanIsStriken,
           }">{{ letter }}</span>
 </template>
 
 <script>
+import {mapState, mapActions} from "pinia";
+import {useGameStore} from "@/stores/GameStore";
+
 export default {
     name: "LetterSpan",
 
@@ -14,38 +19,72 @@ export default {
         letter: {
             type: String,
             required: true,
-        }
+        },
+        current: {
+            type: Boolean,
+            required: true,
+        },
     },
 
-    data() {
-        return {
-            spanIsDefault: true,
-            spanIsColored: false,
-            spanIsStriked: false,
-        }
+    // data() {
+    //     return {
+    //         spanIsDefault: true,
+    //         spanIsColored: false,
+    //         spanIsStriken: false,
+    //     }
+    // },
+
+    computed: {
+        ...mapState(useGameStore, [
+            'defaultLetters',
+            'coloredLetters',
+            'strikenLetters',
+        ]),
+
+        spanIsDefault() {
+            return this.defaultLetters.includes(this.letter);
+        },
+
+        spanIsColored() {
+            return this.coloredLetters.includes(this.letter);
+        },
+
+        spanIsStriken() {
+            return this.strikenLetters.includes(this.letter);
+        },
+
     },
 
     methods: {
+
+
+        ...mapActions(useGameStore, [
+           'toggleLetterState',
+        ]),
+
         toggleSpanState() {
-            if (this.spanIsDefault) {
-                this.spanIsDefault = false;
-                this.spanIsColored = true;
-                this.spanIsStriked = false;
-            } else if (this.spanIsColored) {
-                this.spanIsDefault = false;
-                this.spanIsColored = false;
-                this.spanIsStriked = true;
-            } else if (this.spanIsStriked) {
-                this.spanIsDefault = true;
-                this.spanIsColored = false;
-                this.spanIsStriked = false;
-            }
+            console.log(this.letter);
+            this.toggleLetterState(this.letter);
 
-
-
-
+            // if (this.spanIsDefault) {
+            //     // 1st click
+            //     this.spanIsDefault = false;
+            //     this.spanIsColored = true;
+            //     this.spanIsStriken = false;
+            //
+            // } else if (this.spanIsColored) {
+            //     // 2nd click
+            //     this.spanIsDefault = false;
+            //     this.spanIsColored = false;
+            //     this.spanIsStriken = true;
+            //
+            // } else if (this.spanIsStriken) {
+            //     // 3rd click
+            //     this.spanIsDefault = true;
+            //     this.spanIsColored = false;
+            //     this.spanIsStriken = false;
+            // }
         },
-
 
     }
 }
@@ -53,6 +92,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '../../assets/css/variables.scss';
+
 span {
     //outline: 1px solid #d04;
 
@@ -60,12 +100,20 @@ span {
     text-align: center;
     width: 24px;
 
-    &.colored {
-        color: $accent-dark;
+    &.current.default {
+        color: $dark;
     }
 
-    &.striked {
-        color: $light-hover;
+    &.default {
+        color: $soft;
+    }
+
+    &.colored {
+        color: $primary;
+    }
+
+    &.striken {
+        color: $soft;
         position: relative;
 
         &:after {
@@ -73,10 +121,10 @@ span {
             position: absolute;
             border-radius: 2px;
             left: 35%;
-            top: 0;
+            top: -2px;
             display: block;
-            width: 4px;
-            height: 100%;
+            width: 3px;
+            height: 105%;
             transform: rotate(.1turn);
             background-color: $danger;
         }
