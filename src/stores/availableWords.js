@@ -89,6 +89,7 @@ const availableWords = [
     'CHAUD',
     'CHOIX',
     'CHOSE',
+    'CHUTE',
     'CIDRE',
     'CIEUX',
     'CIGNE',

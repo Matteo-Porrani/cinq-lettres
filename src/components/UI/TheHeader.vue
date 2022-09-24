@@ -27,7 +27,9 @@
                 <!-- RIGHT -->
                 <div class="right-guy text-center" :class="{'flex-grow': this.$route.fullPath === '/'}">
                     <h1 class="py-1">
-                        <i class="fas fs-3 fa-dice-d6"></i>
+                        <span class="icon-wrapper" :class="{'rotated': rotated}">
+                            <i class="fas fs-3 fa-dice-d6"></i>
+                        </span>
                     </h1>
                 </div>
 
@@ -42,8 +44,14 @@
 export default {
     name: "TheHeader",
 
+    computed: {
+        rotated() {
+            return this.$route.fullPath !== '/';
+        },
+    },
+
     mounted() {
-        console.log(this.$route.fullPath);
+        console.log(this.$route);
     }
 }
 </script>
@@ -104,7 +112,20 @@ h1 {
     color: $light;
     text-transform: uppercase;
 
+    .icon-wrapper {
+        transition: all .5s ease-in-out;
+        display: inline-block;
+        width: fit-content;
+
+        &.rotated {
+            transform: rotateZ(.5turn);
+        }
+    }
+
+
 }
+
+
 
 .return-enter-from,
 .return-leave-to {

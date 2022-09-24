@@ -26,14 +26,6 @@ export default {
         },
     },
 
-    // data() {
-    //     return {
-    //         spanIsDefault: true,
-    //         spanIsColored: false,
-    //         spanIsStriken: false,
-    //     }
-    // },
-
     computed: {
         ...mapState(useGameStore, [
             'defaultLetters',
@@ -56,34 +48,12 @@ export default {
     },
 
     methods: {
-
-
         ...mapActions(useGameStore, [
            'toggleLetterState',
         ]),
 
         toggleSpanState() {
-            console.log(this.letter);
             this.toggleLetterState(this.letter);
-
-            // if (this.spanIsDefault) {
-            //     // 1st click
-            //     this.spanIsDefault = false;
-            //     this.spanIsColored = true;
-            //     this.spanIsStriken = false;
-            //
-            // } else if (this.spanIsColored) {
-            //     // 2nd click
-            //     this.spanIsDefault = false;
-            //     this.spanIsColored = false;
-            //     this.spanIsStriken = true;
-            //
-            // } else if (this.spanIsStriken) {
-            //     // 3rd click
-            //     this.spanIsDefault = true;
-            //     this.spanIsColored = false;
-            //     this.spanIsStriken = false;
-            // }
         },
 
     }

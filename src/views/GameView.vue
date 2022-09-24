@@ -4,15 +4,6 @@
 
             <GameLoader v-if="loading"/>
 
-<!--            <MainLink v-if="!loading"-->
-<!--                      route="/" type="outline" size="small">-->
-<!--                <template #icon>-->
-<!--                    <i class="fas fa-arrow-left"></i>-->
-<!--                </template>-->
-<!--                <template v-slot:default>Retour</template>-->
-<!--            </MainLink>-->
-
-
             <div v-if="phase === 'end'" class="mt-6">
                 <p class="text-center text-mid fs-4 f-inria mb-3">Le mot secret était</p>
                 <p class="text-center fs-6">{{ targetWord }}</p>
@@ -69,7 +60,7 @@ export default {
 
     data() {
         return {
-            loading: true,
+            loading: false,
 
             keyboardIsVisible: false,
         }
@@ -99,9 +90,9 @@ export default {
 
         executeLoader() {
             this.keyboardIsVisible = false;
-            this.loading = true;
+            // this.loading = true;
             setTimeout(() => {
-                this.loading = false;
+                // this.loading = false;
 
                 // SHOW KEYBOARD
                 setTimeout(() => {

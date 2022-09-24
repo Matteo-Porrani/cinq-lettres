@@ -59,7 +59,6 @@ export const useGameStore = defineStore('game', {
         },
 
         addLetterKeyPress(key) {
-            console.log('addLetterKeyPress executed');
             if (this.word.length < 5) {
                 this.word += key.toUpperCase();
             }
@@ -96,7 +95,6 @@ export const useGameStore = defineStore('game', {
         },
 
         checkWord() {
-            console.log(this.submissions[this.submissions.length - 1]);
             if (this.submissions[this.submissions.length - 1] === this.targetWord) {
                 this.phase = 'end';
                 this.gameResult = 'win';
@@ -120,27 +118,38 @@ export const useGameStore = defineStore('game', {
             this.word = '';
             this.submissions = [];
             this.hints = [];
+            this.defaultLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+            this.coloredLetters = [];
+            this.strikenLetters = [];
             this.getRandomWord();
         },
 
 
         toggleLetterState(letter) {
 
+            // console.log('click on "' + letter + '"');
+
             if (this.defaultLetters.includes(letter)) {
-                console.log(letter);
-                console.log(this.defaultLetters.includes(letter));
                 // 1st click
                 this.defaultLetters.splice(this.defaultLetters.findIndex(item => item === letter), 1);
                 this.coloredLetters.push(letter);
+                // console.log(letter + ' has been added to COLORED array');
+
             } else if (this.coloredLetters.includes(letter)) {
                 // 2nd click
-                this.coloredLetters.splice(this.defaultLetters.findIndex(item => item === letter), 1);
+                this.coloredLetters.splice(this.coloredLetters.findIndex(item => item === letter), 1);
                 this.strikenLetters.push(letter);
+                // console.log(letter + ' has been added to STRIKEN array');
+
             } else if (this.strikenLetters.includes(letter)) {
                 // 3rd click
-                this.strikenLetters.splice(this.defaultLetters.findIndex(item => item === letter), 1);
+                this.strikenLetters.splice(this.strikenLetters.findIndex(item => item === letter), 1);
                 this.defaultLetters.push(letter);
             }
+
+            // console.log('DEFAULT', this.defaultLetters);
+            // console.log('COLORED', this.coloredLetters);
+            // console.log('STRIKEN', this.strikenLetters);
 
         },
     },
