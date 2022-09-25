@@ -1,4 +1,5 @@
-const availableWords = [
+const availableWordsFR = [
+
     // A
     'ABRIS',
     'ADIEU',
@@ -562,4 +563,4 @@ const availableWords = [
 
 ];
 
-export default availableWords;
+export default availableWordsFR;

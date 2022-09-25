@@ -1,6 +1,7 @@
 import {defineStore} from 'pinia';
 
-import availableWords from './availableWords.js';
+import availableWordsFR from './availableWordsFR.js';
+import availableWordsIT from './availableWordsIT.js';
 import hintCalculator from "@/stores/hintCalculator.js";
 
 export const useGameStore = defineStore('game', {
@@ -18,9 +19,9 @@ export const useGameStore = defineStore('game', {
 
             word: '',
 
-            words: availableWords,
+            // words: this.selectedFrench ? availableWordsFR : availableWordsIT,
 
-            sortedWords: availableWords.sort(),
+            // sortedWords: availableWordsFR.sort(),
 
             targetWord: '',
 
@@ -40,6 +41,14 @@ export const useGameStore = defineStore('game', {
     },
 
     getters: {
+
+        words() {
+            return this.selectedFrench ? availableWordsFR : availableWordsIT;
+        },
+
+        sortedWords() {
+            return this.selectedFrench ? availableWordsFR.sort() : availableWordsIT.sort();
+        },
 
         wordInList() {
             if (this.word.length < 5) return true;
