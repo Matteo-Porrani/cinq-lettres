@@ -9,7 +9,7 @@
 
 
         <span class="av-word f-inria text-center text-mid rounded px-2"
-              v-for="(w, idx) in words"
+              v-for="(w, idx) in sortedWords"
               :key="idx">{{ w }}</span>
     </div>
 </template>
@@ -30,6 +30,7 @@ export default {
     computed: {
         ...mapState(useGameStore, [
             'words',
+            'sortedWords',
         ]),
 
         getColAContent() {

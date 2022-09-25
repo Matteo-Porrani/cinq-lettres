@@ -1,48 +1,44 @@
 <template>
-    <section id="mainNavigation" class="mt-10">
+    <section id="mainNavigation" class="mt-8">
         <!--        <small>#mainNavigation</small>-->
 
+        <!-- GAME -->
         <MainLink route="/game" type="primary" size="normal">
             <template v-slot:icon>
                 <i class="fas fa-puzzle-piece"></i>
             </template>
-            <template v-slot:default>Jouer</template>
+            <template v-slot:default>{{ textForPlay }}</template>
         </MainLink>
 
-        <MainLink route="/rules"
-                  type="outline"
-                  size="normal"
-        >
 
+        <!-- RULES -->
+        <MainLink route="/rules" type="outline" size="normal">
             <template #icon>
                 <i class="fas fa-question-circle"></i>
             </template>
-
-            <template v-slot:default>Instructions</template>
+            <template v-slot:default>{{ textForRules }}</template>
         </MainLink>
 
-        <MainLink route="/list"
-                  type="outline"
-                  size="normal"
-        >
+
+        <!-- LIST -->
+        <MainLink route="/list" type="outline" size="normal">
             <template #icon>
                 <i class="fas fa-sort-alpha-down"></i>
             </template>
-            <template v-slot:default>liste des mots</template>
+            <template v-slot:default>{{ textForList }}</template>
         </MainLink>
 
-        <MainLink route="/about"
-                  type="outline"
-                  size="normal"
-        >
+
+        <!-- ABOUT -->
+        <MainLink route="/about" type="outline" size="normal">
             <template #icon>
                 <i class="fas fa-ghost"></i>
             </template>
-            <template v-slot:default>À propos</template>
+            <template v-slot:default>{{ textForAbout }}</template>
         </MainLink>
 
 
-<!--        <button class="fs-5" @click="toggleIcon">Toggle</button>-->
+        <!--        <button class="fs-5" @click="toggleIcon">Toggle</button>-->
 
         <!-- Here we use a child component wrapped in <transition> and provide a name -->
         <!-- in the parent component we set the v-if condition -->
@@ -56,16 +52,15 @@
 </template>
 
 <script>
-// import MainLink from "@/components/navigation/MainLink.vue";
+import {mapState} from 'pinia';
+import {useGameStore} from "@/stores/GameStore";
 
-import MainLink from "@/components/navigation/MainLink";
 import TestAnimation from "@/components/UI/TestAnimation";
 
 export default {
     name: "MainNavigation",
 
     components: {
-        MainLink,
         TestAnimation,
     },
 
@@ -73,6 +68,15 @@ export default {
         return {
             iconIsVisible: false,
         }
+    },
+
+    computed: {
+        ...mapState(useGameStore, [
+            'textForPlay',
+            'textForRules',
+            'textForList',
+            'textForAbout',
+        ]),
     },
 
     methods: {
@@ -86,7 +90,7 @@ export default {
 
 <style lang="scss" scoped>
 #mainNavigation {
-    //border: 2px solid #19e;
+    //border: 1px solid #19e;
 }
 
 //#test {

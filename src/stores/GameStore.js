@@ -8,6 +8,8 @@ export const useGameStore = defineStore('game', {
     state: () => {
         return {
 
+            selectedFrench: true,
+
             phase: 'play',
             gameResult: 'loose',
 
@@ -17,6 +19,8 @@ export const useGameStore = defineStore('game', {
             word: '',
 
             words: availableWords,
+
+            sortedWords: availableWords.sort(),
 
             targetWord: '',
 
@@ -40,7 +44,28 @@ export const useGameStore = defineStore('game', {
         wordInList() {
             if (this.word.length < 5) return true;
             return this.word.length === 5 && this.words.includes(this.word);
-        }
+        },
+
+        homeClaim() {
+            return this.selectedFrench ? "Entre vous et la victoire,<br>seulement 5 petites lettres !" : "Solo 5 lettere <br> vi separano dalla vittoria!";
+        },
+
+        textForPlay() {
+            return this.selectedFrench ? "Jouer" : "Gioca";
+        },
+
+        textForRules() {
+            return this.selectedFrench ? "Instructions" : "Istruzioni";
+        },
+
+        textForList() {
+            return this.selectedFrench ? "Liste des mots" : "Lista parole";
+        },
+
+        textForAbout() {
+            return this.selectedFrench ? "À propos" : "Altre info";
+        },
+
 
     },
 
@@ -152,6 +177,11 @@ export const useGameStore = defineStore('game', {
             // console.log('STRIKEN', this.strikenLetters);
 
         },
+
+        toggleLanguage() {
+            this.selectedFrench = !this.selectedFrench;
+        },
+
     },
 
 });
