@@ -34,8 +34,8 @@ export default {
     transition: all .3s ease-in-out;
     border: 2px solid $mid;
 
-    height: 46px;
-    width: 46px;
+    height: 40px;
+    width: 40px;
     display: flex;
 
     border-radius: 50%;

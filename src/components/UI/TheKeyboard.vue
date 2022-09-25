@@ -41,7 +41,7 @@ export default {
 
     data() {
         return {
-            alertIsVisible: true,
+            alertIsVisible: false,
 
             alertType: '',
             alertIcon: '',

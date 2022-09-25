@@ -5,12 +5,15 @@
 
         <p class="f-inria fs-2">
             <span v-html="alertIcon"></span>
-            <span class="ms-1">{{ alertMess }}</span>
+            <span class="ms-1">{{ textForInvalidWord }}</span>
         </p>
     </div>
 </template>
 
 <script>
+import {mapState} from 'pinia';
+import {useGameStore} from "@/stores/GameStore.js";
+
 export default {
     name: "TheKeyboardAlert",
 
@@ -27,8 +30,13 @@ export default {
             type: String,
             required: true,
         },
-    }
+    },
 
+    computed: {
+        ...mapState(useGameStore, [
+            'textForInvalidWord',
+        ]),
+    },
 
 }
 </script>
@@ -49,10 +57,7 @@ export default {
         background-color: $danger;
         color: $light;
     }
-
-
 }
-
 
 .alert-enter-from {
 
@@ -69,19 +74,19 @@ export default {
 @keyframes animAlert {
     0% {
         opacity: 0;
-        transform: scale(.4);
+        transform: rotateZ(-3deg) scale(.4);
     }
 
     60% {
-        transform: scale(.5);
+        transform: rotateZ(3deg) scale(.6);
     }
 
     70% {
-        transform: rotateZ(-6deg) scale(1.1);
+        transform: rotateZ(-5deg) scale(1.1);
     }
 
     85% {
-        transform: rotateZ(6deg) scale(1.05);
+        transform: rotateZ(5deg) scale(1.05);
     }
 
     100% {

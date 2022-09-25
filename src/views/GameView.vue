@@ -47,7 +47,6 @@ import GameWrapper from "@/components/game/GameWrapper.vue";
 import TheKeyboard from "@/components/UI/TheKeyboard.vue";
 import TheResult from "@/components/UI/TheResult.vue";
 
-
 export default {
     name: "GameView",
 

@@ -20,7 +20,6 @@ export const useGameStore = defineStore('game', {
             word: '',
 
             // words: this.selectedFrench ? availableWordsFR : availableWordsIT,
-
             // sortedWords: availableWordsFR.sort(),
 
             targetWord: '',
@@ -73,6 +72,10 @@ export const useGameStore = defineStore('game', {
 
         textForAbout() {
             return this.selectedFrench ? "À propos" : "Altre info";
+        },
+
+        textForInvalidWord() {
+            return this.selectedFrench ? "Ce mot n'est pas valide" : "Parola non valida";
         },
 
 

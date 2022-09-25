@@ -13,6 +13,11 @@
 </template>
 
 <script>
+import {mapActions} from "pinia";
+
+import {useRuleStore} from "@/stores/RuleStore.js";
+
+
 // @ is an alias to /src
 import TheHomeHeader from "@/components/UI/TheHomeHeader.vue";
 import LanguageSelector from "@/components/UI/LanguageSelector.vue";
@@ -25,6 +30,14 @@ export default {
         TheHomeHeader,
         LanguageSelector,
         MainNavigation,
+    },
+
+    methods: {
+        ...mapActions(useRuleStore, ['resetLocator']),
+    },
+
+    mounted() {
+        this.resetLocator();
     }
 }
 </script>
