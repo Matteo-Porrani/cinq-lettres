@@ -1,5 +1,5 @@
 <template>
-<div id="flagIcon" :class="{'selected': selected}">
+<div id="flagIcon" :class="{'selected': selected, 'flag-small': small}">
     <div class="flag-stripe" :style="'background-color: ' + colors[0]"></div>
     <div class="flag-stripe" :style="'background-color: ' + colors[1]"></div>
     <div class="flag-stripe" :style="'background-color: ' + colors[2]"></div>
@@ -18,6 +18,10 @@ export default {
         selected: {
             type: Boolean,
             required: true,
+        },
+        small: {
+            type: Boolean,
+            required: false,
         },
     }
 }
@@ -41,6 +45,11 @@ export default {
     &.selected {
         height: 60px;
         width: 60px;
+
+        &.flag-small {
+            height: 24px;
+            width: 24px;
+        }
     }
 
     .flag-stripe {

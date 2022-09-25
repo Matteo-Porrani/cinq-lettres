@@ -1,5 +1,5 @@
 <template>
-    <section id="mainNavigation" class="mt-8">
+    <section id="mainNavigation" class="mt-5">
         <!--        <small>#mainNavigation</small>-->
 
         <!-- GAME -->

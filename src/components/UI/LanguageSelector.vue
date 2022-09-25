@@ -1,12 +1,12 @@
 <template>
-    <div id="languageSelector" class="my-4">
+    <div id="languageSelector" class="mt-5">
 
         <div class="flag-section">
             <FlagIcon :colors="['#023e8a', '#fff', '#ef233c']" :selected="selectedFrench"/>
         </div>
 
         <div class="toggle-section">
-            <BaseToggle @click="toggleLanguage"/>
+            <BaseToggle @click="toggleLanguage" :state="selectedFrench"/>
         </div>
 
         <div class="flag-section">

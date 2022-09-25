@@ -1,7 +1,7 @@
 <template>
     <div id="baseToggle"
          @click="toggleSwitch"
-         :class="{'just-start': selectedLeft, 'just-end': !selectedLeft}"
+         :class="{'just-start': state, 'just-end': !state}"
     >
         <div class="switch"></div>
     </div>
@@ -11,11 +11,19 @@
 export default {
     name: "BaseToggle",
 
-    data() {
-        return {
-            selectedLeft: true,
-        }
+    props: {
+        // 'state' is true/false and will determine the left/right state of the toggle
+        state: {
+            type: Boolean,
+            required: true,
+        },
     },
+
+    // data() {
+    //     return {
+    //         selectedLeft: true,
+    //     }
+    // },
 
     methods: {
 

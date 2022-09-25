@@ -5,7 +5,7 @@
             style="transform: translate(-1%, -111%);">
             PENTA
         </h1>
-        <h2 class="f-inria text-center mt-2" style="font-weight: normal;">
+        <h2 class="f-inria text-center" style="font-weight: normal; margin-top: -40px">
             <span v-html="homeClaim"></span>
         </h2>
     </div>
