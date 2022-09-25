@@ -1,5 +1,5 @@
 <template>
-    <div id="rulesContent" class="pt-3">
+    <div id="rulesContent" class="pt-1">
         <div class="container text-mid">
             <!--            <span class="f-inria text-danger">selectedFrench: {{ selectedFrench }}</span>-->
 
@@ -9,16 +9,16 @@
                     <span v-html="rules.a1"></span>
                 </p>
 
-                <p class="f-inria mt-2">
+                <p class="f-inria mt-1">
                     <span v-html="rules.a2"></span>
                 </p>
 
 
-                <p class="text-center fs-5 mt-5">
+                <p class="text-center fs-5 mt-3">
                     <span v-html="rules.a3"></span>
                 </p>
 
-                <p class="text-center mt-2">
+                <p class="text-center">
 <!--                    <i class="far fs-6 text-success fa-check-square"></i>-->
                     <i class="far fa-smile fs-6 text-primary"></i>
                 </p>
@@ -27,11 +27,11 @@
                     <span v-html="rules.a4"></span>
                 </p>
 
-                <p class="text-center fs-5 mt-5">
+                <p class="text-center fs-5 mt-3">
                     <span v-html="rules.a5"></span>
                 </p>
 
-                <p class="text-center mt-2">
+                <p class="text-center">
                     <i class="far fa-frown fs-6 text-danger"></i>
                 </p>
 
