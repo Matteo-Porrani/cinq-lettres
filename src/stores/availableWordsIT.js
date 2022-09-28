@@ -1,6 +1,6 @@
 const availableWordsIT = [
 
-    // A
+    //A
     'ABITO',
     'ACETO',
     'AGLIO',
@@ -17,7 +17,7 @@ const availableWordsIT = [
     'ASTIO',
     'ASTRO',
 
-    // B
+    //B
     'BANCO',
     'BAGNI',
     'BAGNO',
@@ -26,10 +26,10 @@ const availableWordsIT = [
     'BANDE',
     'BASTO',
     'BENDA',
-    'BIMBA',
-    'BIMBE',
-    'BIMBO',
-    'BOMBE',
+    'BORSA',
+    'BORSE',
+    'BRAVE',
+    'BRAVI',
     'BRAVO',
     'BUONA',
     'BUONE',
@@ -38,7 +38,8 @@ const availableWordsIT = [
     'BUSTI',
     'BUSTO',
 
-    // C
+    //C
+    'CALDO',
     'CALME',
     'CALMI',
     'CALMO',
@@ -53,16 +54,19 @@ const availableWordsIT = [
     'CASTE',
     'CASTI',
     'CASTO',
+    'CEDRO',
     'CERTO',
     'CERVA',
     'CERVO',
     'CESTA',
     'CESTO',
+    'CHILO',
     'CIELO',
     'CIFRA',
     'CIFRE',
     'CINTA',
     'CINTO',
+    'CLERO',
     'COLPA',
     'COLPE',
     'COLPI',
@@ -84,6 +88,7 @@ const availableWordsIT = [
     'CRUDE',
     'CRUDI',
     'CRUDO',
+    'CRUNA',
     'CURVA',
     'CURVE',
     'CUORE',
@@ -91,7 +96,7 @@ const availableWordsIT = [
     'CULTO',
 
 
-    // D
+    //D
     'DEGNO',
     'DENTI',
     'DESTO',
@@ -101,11 +106,11 @@ const availableWordsIT = [
     'DRAGO',
     'DRONE',
 
-    // E
+    //E
     'ELICA',
     'ESTRO',
 
-    // F
+    //F
     'FANGO',
     'FIALE',
     'FIATO',
@@ -118,6 +123,7 @@ const availableWordsIT = [
     'FRASI',
     'FRENI',
     'FRENO',
+    'FONDI',
     'FORTE',
     'FORTI',
     'FURBI',
@@ -125,7 +131,7 @@ const availableWordsIT = [
     'FUGHE',
     'FUNGO',
 
-    // G
+    //G
     'GAMBE',
     'GAMBI',
     'GAMBO',
@@ -143,15 +149,14 @@ const availableWordsIT = [
     'GUIDA',
     'GUSTO',
 
-
-
-    // H
+    //H
     'HOTEL',
 
-    // I
+    //I
     'ISOLA',
 
-    // L
+    //L
+    'LADRO',
     'LARDO',
     'LARGO',
     'LAMPO',
@@ -162,12 +167,16 @@ const availableWordsIT = [
     'LESTA',
     'LESTI',
     'LESTO',
+    'LIBRO',
+    'LIETA',
+    'LIETO',
+    'LITRO',
     'LUCRO',
     'LUNGA',
     'LUNGI',
     'LUNGO',
 
-    // M
+    //M
     'MADRE',
     'MADRI',
     'MAGHI',
@@ -178,21 +187,27 @@ const availableWordsIT = [
     'MANIE',
     'MARCE',
     'MANTO',
+    'MENTA',
+    'MENTI',
+    'MENTO',
     'MERLO',
     'MERLI',
     'MOSCA',
     'MONTE',
     'MONTI',
 
-    // N
+    //N
     'NOMEA',
     'NERVI',
     'NERVO',
 
 
-    // O
+    //O
+    'OMBRA',
+    'OMBRE',
+    'OVEST',
 
-    // P
+    //P
     'PADRE',
     'PADRI',
     'PALCO',
@@ -203,6 +218,9 @@ const availableWordsIT = [
     'PEGNO',
     'PESCA',
     'PESTO',
+    'PERLA',
+    'PERNI',
+    'PERNO',
     'PIANO',
     'PIEGA',
     'PIETA',
@@ -222,6 +240,7 @@ const availableWordsIT = [
     'POLSI',
     'PONTE',
     'PONTI',
+    'PORCI',
     'PORTA',
     'PORTE',
     'PORTI',
@@ -239,13 +258,13 @@ const availableWordsIT = [
     'PUNTO',
     'PURGA',
 
-    // Q
+    //Q
     'QUALE',
     'QUALI',
     'QUOTA',
     'QUOTE',
 
-    // R
+    //R
     'RADIO',
     'RAGNO',
     'RAGNI',
@@ -254,22 +273,20 @@ const availableWordsIT = [
     'RESTA',
     'RESTO',
     'RESTI',
+    'RONDA',
     'ROSPI',
     'RUOTA',
     'RUGHE',
 
-    // S
+    //S
     'SALDE',
     'SALDI',
     'SALDO',
-    'SALPA',
-    'SALTA',
     'SALTI',
     'SALTO',
     'SALVE',
     'SALVI',
     'SALVO',
-    'SARTA',
     'SARTE',
     'SARTI',
     'SARTO',
@@ -298,15 +315,20 @@ const availableWordsIT = [
     'SERIO',
     'SERVA',
     'SERVO',
+    'SIDRO',
     'SOLDI',
     'SOPRA',
     'SPINA',
     'SPINE',
+    'SPARO',
+    'SPAZI',
     'SPUTO',
     'STELO',
     'STILE',
     'STIMA',
     'STIME',
+    'STIVA',
+    'STIVE',
     'STUDI',
     'STUFA',
     'STUFE',
@@ -315,7 +337,7 @@ const availableWordsIT = [
     'SUORA',
     'SUORE',
 
-    // T
+    //T
     'TANGO',
     'TARDE',
     'TARDI',
@@ -323,9 +345,9 @@ const availableWordsIT = [
     'TENDA',
     'TERNO',
     'TERSO',
-    'TESTA',
-    'TESTI',
-    'TESTO',
+    'TERZA',
+    'TERZI',
+    'TERZO',
     'TOMBA',
     'TOMBE',
     'TONDA',
@@ -338,10 +360,10 @@ const availableWordsIT = [
     'TRAVI',
     'TURBO',
 
-    // U
+    //U
     'UDITO',
 
-    // V
+    //V
     'VASTO',
     'VANTO',
     'VENTI',
@@ -371,11 +393,10 @@ const availableWordsIT = [
     'VOLTE',
     'VOLTI',
 
-    // W
+    //W
 
-    // Z
+    //Z
     'ZAMPE',
-
 ];
 
 export default availableWordsIT;

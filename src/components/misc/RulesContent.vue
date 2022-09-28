@@ -132,7 +132,6 @@ export default {
 
         getContent() {
             const isFR = this.selectedFrench;
-            console.log(isFR)
             return this.getRules(isFR);
         },
 
@@ -140,8 +139,6 @@ export default {
 
     mounted() {
         const isFR = this.selectedFrench;
-        console.log(isFR)
-        console.log(this.getRules(isFR));
         this.rules = this.getRules(isFR);
         this.rulesLoaded = true;
     }

@@ -42,8 +42,6 @@ export default {
 
     methods: {
         pressKey() {
-            console.log(this.content);
-
             if (!['OK', 'Suppr'].includes(this.content)) {
                 this.addLetter(this.content);
             }

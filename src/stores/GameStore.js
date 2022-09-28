@@ -78,6 +78,14 @@ export const useGameStore = defineStore('game', {
             return this.selectedFrench ? "Ce mot n'est pas valide" : "Parola non valida";
         },
 
+        textForWordListing1() {
+            return this.selectedFrench ? "Voici les" : "Ecco le";
+        },
+
+        textForWordListing2() {
+            return this.selectedFrench ? "mots<br>disponibles dans le jeu" : "parole<br>disponibili nel gioco";
+        },
+
 
     },
 
@@ -163,30 +171,21 @@ export const useGameStore = defineStore('game', {
 
 
         toggleLetterState(letter) {
-
-            // console.log('click on "' + letter + '"');
-
             if (this.defaultLetters.includes(letter)) {
                 // 1st click
                 this.defaultLetters.splice(this.defaultLetters.findIndex(item => item === letter), 1);
                 this.coloredLetters.push(letter);
-                // console.log(letter + ' has been added to COLORED array');
 
             } else if (this.coloredLetters.includes(letter)) {
                 // 2nd click
                 this.coloredLetters.splice(this.coloredLetters.findIndex(item => item === letter), 1);
                 this.strikenLetters.push(letter);
-                // console.log(letter + ' has been added to STRIKEN array');
 
             } else if (this.strikenLetters.includes(letter)) {
                 // 3rd click
                 this.strikenLetters.splice(this.strikenLetters.findIndex(item => item === letter), 1);
                 this.defaultLetters.push(letter);
             }
-
-            // console.log('DEFAULT', this.defaultLetters);
-            // console.log('COLORED', this.coloredLetters);
-            // console.log('STRIKEN', this.strikenLetters);
 
         },
 

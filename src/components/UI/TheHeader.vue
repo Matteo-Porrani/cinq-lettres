@@ -50,9 +50,9 @@ export default {
         },
     },
 
-    mounted() {
-        console.log(this.$route);
-    }
+    // mounted() {
+    //     console.log(this.$route);
+    // }
 }
 </script>
 

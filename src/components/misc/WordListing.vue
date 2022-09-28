@@ -8,7 +8,7 @@
         <!--        </div>-->
 
 
-        <span class="av-word f-inria text-center text-mid rounded px-2"
+        <span class="av-word f-inria text-center text-mid rounded fs-1 px-2 py-1"
               v-for="(w, idx) in sortedWords"
               :key="idx">{{ w }}</span>
     </div>
@@ -44,8 +44,6 @@ export default {
     },
 
     mounted() {
-        console.log(this.words);
-
         this.halfList = Math.ceil(this.words.length / 2);
 
     }
@@ -67,16 +65,26 @@ export default {
 
     span {
         border: 1px solid $mid;
-        width: 30%;
+        width: 22%;
 
-        &:nth-child(3n + 2) {
-            margin-top: 10px;
+        &:nth-child(n) {
+            margin-top: 0;
+            //background-color: gray;
+        }
+
+        &:nth-child(4n + 2) {
+            margin-top: 8px;
             //background-color: yellow;
         }
 
-        &:nth-child(3n) {
-            margin-top: 20px;
+        &:nth-child(4n + 3) {
+            margin-top: 16px;
             //background-color: cyan;
+        }
+
+        &:nth-child(4n + 4) {
+            margin-top: 24px;
+            //background-color: violet;
         }
     }
 

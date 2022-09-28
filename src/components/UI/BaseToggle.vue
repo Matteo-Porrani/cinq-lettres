@@ -28,7 +28,6 @@ export default {
     methods: {
 
         toggleSwitch() {
-            console.log('clicked');
             this.selectedLeft = !this.selectedLeft;
         }
     }
