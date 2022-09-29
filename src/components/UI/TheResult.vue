@@ -69,8 +69,7 @@ export default {
 
 }
 
-.result-enter-from,
-.result-leave-to {
+.result-enter-from {
     opacity: .1;
     transform: scale(.2) rotateZ(0);
 }
@@ -80,13 +79,12 @@ export default {
     transition: all 1s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.result-leave-active {
-    //transition: all 1s cubic-bezier(0.83, 0, 0.17, 1);
-    transition: all 1s cubic-bezier(0.55, 0, 1, 0.45);
-}
+//.result-leave-active {
+//    //transition: all 1s cubic-bezier(0.83, 0, 0.17, 1);
+//    transition: all 1s cubic-bezier(0.55, 0, 1, 0.45);
+//}
 
-.result-enter-to,
-.result-leave-from {
+.result-enter-to {
     opacity: 1;
     transform: scale(1) rotateZ(2turn);
 }

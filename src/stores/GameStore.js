@@ -159,7 +159,7 @@ export const useGameStore = defineStore('game', {
 
         reloadGame() {
             this.phase = 'play';
-            this.result = 'loose';
+            this.gameResult = 'loose';
             this.word = '';
             this.submissions = [];
             this.hints = [];

@@ -33,7 +33,10 @@ export default {
     },
 
     methods: {
-        ...mapActions(useRuleStore, ['resetLocator']),
+        ...mapActions(useRuleStore, [
+            'resetLocator',
+            'reloadGame',
+        ]),
     },
 
     mounted() {

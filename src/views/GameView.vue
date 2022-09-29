@@ -11,7 +11,7 @@
 
 
             <transition name="result">
-                <TheResult v-if="!loading && phase === 'end'"
+                <TheResult v-if="!loading && phase === 'end' && submissions.length > 0"
                            :result-type="gameResult"/>
             </transition>
 
@@ -71,6 +71,7 @@ export default {
             'phase',
             'gameResult',
             'letters',
+            'submissions',
         ]),
     },
 
